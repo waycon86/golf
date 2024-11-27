@@ -1,0 +1,258 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap');
+
+/* Root Variables */
+:root {
+    --white: #fff;
+    --black: #000;
+    --font-color-base: #666;
+    --font-color-dark: #212529;
+    --font-color-light: #b0aebe;
+    --font-color-link: #57A6FF;
+    --footer: #34314b;
+    --footer-base: #2e2b45;
+    --contrast: rgba(246, 248, 249, 0.8);
+    --success: #64ECF5;
+    --danger: #FF8B8D;
+    --grad-1: #a1ecff;
+    --grad-2: #7dbcff;
+
+    --size-10: 0.625rem;
+    --size-14: 0.875rem;
+    --size-16: 1rem;
+    --size-18: 1.125rem;
+    --size-20: 1.25rem;
+    --size-30: 1.875rem;
+    --size-40: 2.5rem;
+    --size-50: 3.125rem;
+    --size-100: 6.25rem;
+    --size-150: 9.375rem;
+}
+
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--font-color-base);
+    background-color: var(--contrast);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for Layout */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #4b2e83; /* Purple for Alzheimer's awareness */
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--white); /* Fix incorrect variable syntax */
+    transition: color 0.3s ease; /* Add smooth hover */
+}
+
+header nav a:hover {
+    color: var(--font-color-light);
+}
+
+/* Alzheimer’s Awareness Section */
+.alz-awareness {
+    background-color: #e3f2fd;
+    border-left: 5px solid #4b2e83; /* Matching purple */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.alz-awareness h3 {
+    font-size: 1.5em;
+    color: #4b2e83;
+}
+
+.alz-awareness p {
+    font-size: 1em;
+    color: var(--font-color-dark);
+}
+
+.alz-awareness .alz-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4b2e83;
+    font-weight: bold;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.alz-awareness .alz-link:hover {
+    text-decoration: underline;
+}
+
+/* Profile Cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.card h4 {
+    font-family: 'Roboto Slab', serif;
+    color: #4b2e83;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.card .role {
+    font-weight: bold;
+    color: var(--font-color-dark);
+}
+
+/* Buttons */
+button, .donation-buttons button, .donate-btn {
+    background-color: #4b2e83;
+    color: var(--white);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+button:hover, .donation-buttons button:hover, .donate-btn:hover {
+    background-color: #3a2264;
+    transform: scale(1.05); /* Slightly enlarges on hover */
+}
+
+/* Donation Form */
+.donation-form {
+    background-color: var(--white);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.donation-form h3 {
+    color: #4b2e83;
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 10px;
+}
+
+.donation-form input,
+.donation-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: var(--font-color-light);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+/* Footer - Responsive Adjustments */
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    padding-bottom: 20px;
+    align-items: start;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 10px; /* Adds space between items */
+}
+
+.footer-bottom ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
+
+.footer-bottom ul li a {
+    color: var(--font-color-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom ul li a:hover {
+    color: var(--font-color-link);
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr; /* Stacks items vertically on smaller screens */
+    }
+
+    .footer-bottom {
+        flex-direction: column; /* Stacks items vertically */
+        text-align: center;
+    }
+}

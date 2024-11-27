@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./CSS/default.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="https://kit.fontawesome.com/82b0190448.js" crossorigin="anonymous"></script>
+    <style>
+        .pp-3RNPKPZB3ZFN4 {
+            text-align: center;
+            border: none;
+            border-radius: 1.5rem;
+            min-width: 11.625rem;
+            padding: 0 2rem;
+            height: 3.125rem;
+            font-weight: bold;
+            background-color: #3a2264;
+            color: #ffffff;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="registration-page">
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Classic on the Dan</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="donate.html">Donate</a>
+            <a href="up-coming-events.html">Upcoming Events</a>
+            <a href="resgiter.html">Register</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2>Sign Up for the Classic on the Dan Charity Golf Event</h2>
+        <div class="grid-layout">
+            <!-- Ticket Purchase Section -->
+            <div class="ticket-purchase">
+                <form action="process_registration.php" method="POST" class="registration-form">
+                    <h3>Personal Information</h3>
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" required>
+
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" placeholder="Enter your last name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                    <h3>Buy Tickets</h3>
+                    <label for="group_size">Select Group Size:</label>
+                    <select id="group_size" name="group_size" onchange="calculateTotal()" required>
+                        <option value="" disabled selected>Select group size</option>
+                        <option value="1">1 Person - $150</option>
+                        <option value="2">2 People - $300</option>
+                        <option value="3">3 People - $450</option>
+                        <option value="4">4 People - $600</option>
+                        <option value="5">5 People - $750</option>
+                        <option value="6">6 People - $900</option>
+                        <option value="7">7 People - $1050</option>
+                        <option value="8">8 People - $1200</option>
+                        <option value="9">9 People - $1350</option>
+                        <option value="10">10 People - $1500</option>
+                    </select>
+
+                    <p>Total Price: <span id="total_price">$0</span></p>
+
+                    <!-- PayPal Form Integration -->
+                    <form action="https://www.sandbox.paypal.com/ncp/payment/3RNPKPZB3ZFN4" method="post" target="_top" style="display: inline-grid; justify-items: center; align-content: start; gap: 0.5rem;">
+                        <input class="pp-3RNPKPZB3ZFN4" type="submit" value="Reserve your Seat" />
+                        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+                        <section>
+                            Powered by 
+                            <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height: 0.875rem; vertical-align: middle;" />
+                        </section>
+                    </form>
+                </form>
+            </div>
+
+            <!-- Hole-in-One Prize Section -->
+            <div class="prize-section">
+                <h3>Hole-in-One Prize</h3>
+                <p>Win a brand-new 2024 Ford F150 with a hole-in-one! This iconic truck combines strength, durability, and advanced features to elevate your driving experience.</p>
+                <div class="resized-image">
+                    <img src="./images/Golf2.jpg" alt="Ford F150 2024 on the course" class="prize-image">
+                    <img src="./images/fordf150.jpg" alt="Ford F150 parked stylishly" class="prize-image">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 TTS Tournaments Inc. <a href="#"><i class="fab fa-facebook"></i></a>
+    </footer>
+
+    <!-- JavaScript for Calculating Total -->
+    <script>
+        function calculateTotal() {
+            const groupSize = document.getElementById('group_size').value;
+            const totalPrice = groupSize * 150;
+            document.getElementById('total_price').innerText = `$${totalPrice}`;
+        }
+    </script>
+
+</html>
